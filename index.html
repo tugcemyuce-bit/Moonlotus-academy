@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Moon Lotus Academy — yoga, nefes ve farkındalık alanı." />
+  <title>Moon Lotus Academy</title>
+  <style>
+    :root{
+      --bg:#0f0c18;
+      --panel:#181226;
+      --ink:#fffaf2;
+      --muted:#c9bfd6;
+      --gold:#e9c98f;
+      --violet:#8f78c8;
+      --line:rgba(255,255,255,.12)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 20% 0%,#2b1d42 0,transparent 34%),
+        radial-gradient(circle at 85% 15%,#3a214b 0,transparent 28%),
+        var(--bg);
+      color:var(--ink);
+      line-height:1.6
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(15,12,24,.78);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line)
+    }
+    nav{display:flex;align-items:center;justify-content:space-between;min-height:72px}
+    .brand{font-family:Georgia,serif;font-size:1.15rem;letter-spacing:.08em}
+    .brand span{color:var(--gold)}
+    .navlinks{display:flex;gap:22px;font-size:.95rem;color:var(--muted)}
+    .hero{
+      min-height:78vh;display:grid;place-items:center;text-align:center;
+      padding:92px 0 72px
+    }
+    .moon{
+      width:96px;height:96px;margin:0 auto 24px;border-radius:50%;
+      background:radial-gradient(circle at 35% 30%,#fff8dc,#eacb8c 45%,#9f79bd 72%,#3d284d 100%);
+      box-shadow:0 0 60px rgba(233,201,143,.28)
+    }
+    h1,h2{font-family:Georgia,serif;font-weight:500;line-height:1.08;margin:0}
+    .hero h1{font-size:clamp(3rem,9vw,7.6rem);letter-spacing:-.045em}
+    .hero p{
+      max-width:720px;margin:24px auto;color:var(--muted);
+      font-size:clamp(1.05rem,2.5vw,1.3rem)
+    }
+    .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+    .btn{
+      display:inline-block;padding:13px 20px;border-radius:999px;
+      border:1px solid var(--line);font-weight:650;
+      transition:.2s ease
+    }
+    .btn.primary{background:var(--ink);color:#1b1326}
+    .btn:hover{transform:translateY(-1px)}
+    section{padding:82px 0}
+    .eyebrow{
+      text-transform:uppercase;letter-spacing:.18em;color:var(--gold);
+      font-size:.78rem;margin-bottom:12px
+    }
+    .section-head{max-width:760px;margin-bottom:36px}
+    .section-head h2{font-size:clamp(2.2rem,5vw,4.2rem)}
+    .section-head p{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      padding:28px;border-radius:24px;
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
+      border:1px solid var(--line);min-height:230px
+    }
+    .card h3{font-family:Georgia,serif;font-size:1.55rem;margin:8px 0 10px}
+    .card p{color:var(--muted);margin:0}
+    .num{color:var(--gold);font-size:.85rem;letter-spacing:.12em}
+    .story{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+    .quote{
+      padding:42px;border-left:2px solid var(--gold);
+      background:rgba(255,255,255,.04);
+      border-radius:0 24px 24px 0;
+      font-family:Georgia,serif;
+      font-size:clamp(1.5rem,3vw,2.5rem)
+    }
+    .contact{
+      padding:44px;border:1px solid var(--line);border-radius:28px;
+      background:linear-gradient(135deg,rgba(143,120,200,.22),rgba(233,201,143,.10));
+      display:flex;justify-content:space-between;gap:24px;align-items:center
+    }
+    .contact h2{font-size:clamp(2rem,5vw,3.8rem)}
+    .contact p{color:var(--muted);margin-bottom:0}
+    footer{
+      padding:30px 0 44px;color:var(--muted);
+      border-top:1px solid var(--line);font-size:.9rem
+    }
+    @media(max-width:800px){
+      .navlinks{display:none}
+      .grid,.story{grid-template-columns:1fr}
+      .contact{align-items:flex-start;flex-direction:column}
+      .hero{min-height:72vh}
+      .wrap{width:min(100% - 28px,1120px)}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="#top">MOON <span>LOTUS</span> ACADEMY</a>
+        <div class="navlinks">
+          <a href="#hakkimizda">Hakkımızda</a>
+          <a href="#programlar">Programlar</a>
+          <a href="#iletisim">İletişim</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="moon" aria-hidden="true"></div>
+        <div class="eyebrow">Yoga · Nefes · Farkındalık</div>
+        <h1>Karanlıktan<br>aydınlığa.</h1>
+        <p>
+          Moon Lotus Academy, bedeninle yeniden bağ kurduğun;
+          nefes, hareket ve içsel farkındalıkla kendi ışığına
+          yaklaştığın sakin bir alan.
+        </p>
+        <div class="btns">
+          <a class="btn primary" href="#programlar">Programları keşfet</a>
+          <a class="btn" href="mailto:moonlotus.academy@gmail.com">Bize yaz</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="programlar">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Çalışmalarımız</div>
+          <h2>Kendine döneceğin pratikler.</h2>
+          <p>
+            Her seviyeye uygun, bedeni zorlamadan güçlendiren
+            ve zihni sakinleştiren çalışmalar.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="num">01</div>
+            <h3>Özel Yoga Dersleri</h3>
+            <p>
+              İhtiyaçlarına, bedenine ve günlük ritmine göre
+              kişiselleştirilen birebir yoga seansları.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="num">02</div>
+            <h3>Online Programlar</h3>
+            <p>
+              Evinin rahatlığında sürdürülebilir pratikler,
+              kısa akışlar ve düzenli rehberlik.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="num">03</div>
+            <h3>Nefes & Meditasyon</h3>
+            <p>
+              Sinir sistemini yatıştırmaya, odağını toplamaya
+              ve iç alanını genişletmeye yardımcı çalışmalar.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="hakkimizda">
+      <div class="wrap story">
+        <div>
+          <div class="eyebrow">Marka hikâyemiz</div>
+          <div class="section-head">
+            <h2>Lotus gibi, kendi zamanında aç.</h2>
+            <p>
+              Moon Lotus; dönüşümün acele etmeden, köklerden
+              başlayarak gerçekleştiğine inanır. Burada mükemmel
+              olmak değil, kendinle dürüst ve şefkatli bir bağ
+              kurmak önemlidir.
+            </p>
+            <p>
+              Amacımız; yogayı yalnızca bir egzersiz değil,
+              yaşamla daha dengeli ilişki kurmanın yolu olarak paylaşmak.
+            </p>
+          </div>
+        </div>
+
+        <div class="quote">
+          “Karanlık, ışığın yokluğu değil; onun doğduğu yerdir.”
+        </div>
+      </div>
+    </section>
+
+    <section id="iletisim">
+      <div class="wrap">
+        <div class="contact">
+          <div>
+            <div class="eyebrow">İletişim</div>
+            <h2>Birlikte başlayalım.</h2>
+            <p>
+              Dersler ve programlar hakkında bilgi almak için
+              e-posta gönderebilir veya Instagram üzerinden mesaj yazabilirsin.
+            </p>
+          </div>
+          <a class="btn primary" href="mailto:moonlotus.academy@gmail.com">
+            moonlotus.academy@gmail.com
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © 2026 Moon Lotus Academy · Türkçe / English içerikler yakında.
+    </div>
+  </footer>
+</body>
+</html>
