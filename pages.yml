@@ -1,0 +1,46 @@
+media:
+  input: assets
+  output: /assets
+
+content:
+  - name: blog
+    label: Blog Yazıları
+    type: file
+    path: content/posts.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Türkçe başlık
+        type: string
+        required: true
+      - name: title_en
+        label: İngilizce başlık
+        type: string
+      - name: category
+        label: Kategori
+        type: string
+      - name: summary
+        label: Kısa açıklama
+        type: text
+        required: true
+      - name: image
+        label: Kapak görseli
+        type: image
+        required: true
+      - name: body_tr
+        label: Türkçe yazı
+        type: rich-text
+        required: true
+      - name: body_en
+        label: İngilizce yazı
+        type: rich-text
+      - name: published
+        label: Yayında
+        type: boolean
+        default: true
+
+settings:
+  content:
+    merge: true
+
