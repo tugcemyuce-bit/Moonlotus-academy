@@ -163,7 +163,7 @@
           <p>Yaşanmış deneyimlerden, yoga biliminden ve kadim öğretilerden beslenen Türkçe ve İngilizce yazılar.</p>
         </div>
 
-        <div class="blog-grid">
+        <div class="blog-grid" id="blog-yazilari">
           <article class="blog-card">
             <img src="assets/karanliktan-aydinliga.jpeg" alt="Ay ve güneş arasında lotus üzerinde oturan kadın" loading="lazy">
             <div class="blog-card-body">
@@ -347,6 +347,45 @@
       © 2026 Moon Lotus Academy · Türkçe / English içerikler yakında.
     </div>
   </footer>
+
+  <script>
+    (function(){
+      var grid=document.getElementById('blog-yazilari');
+      if(!grid)return;
+      function esc(value){
+        return String(value||'').replace(/[&<>"']/g,function(ch){
+          return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
+        });
+      }
+      function rich(value){
+        return String(value||'').split(/\n\s*\n/).map(function(block){
+          block=block.trim();
+          if(!block)return '';
+          if(block.indexOf('## ')===0)return '<h4>'+esc(block.slice(3))+'</h4>';
+          return '<p>'+esc(block).replace(/\n/g,'<br>')+'</p>';
+        }).join('');
+      }
+      fetch('/content/posts.json?ts='+Date.now()).then(function(response){
+        if(!response.ok)throw new Error('İçerik yüklenemedi');
+        return response.json();
+      }).then(function(posts){
+        posts=posts.filter(function(post){return post.published!==false;});
+        var cards=posts.map(function(post,index){
+          var id='panel-yazi-'+(index+1);
+          return '<article class="blog-card"><img src="'+esc(post.image)+'" alt="'+esc(post.title)+'" loading="lazy"><div class="blog-card-body"><div class="eyebrow">'+esc(post.category)+'</div><h3>'+esc(post.title)+'</h3><p>'+esc(post.summary)+'</p><a class="read-btn" href="#'+id+'">Yazıyı oku · Read</a></div></article>';
+        }).join('');
+        var details=posts.map(function(post,index){
+          var id='panel-yazi-'+(index+1);
+          return '<details class="blog-full" id="'+id+'"><summary>'+String(index+1).padStart(2,'0')+' — '+esc(post.title)+'</summary><div class="article-body"><h3>'+esc(post.title)+'</h3>'+rich(post.body_tr)+(post.title_en||post.body_en?'<div class="english"><h4>'+esc(post.title_en||'English')+'</h4>'+rich(post.body_en)+'</div>':'')+'</div></details>';
+        }).join('');
+        grid.innerHTML=cards+details;
+        grid.querySelectorAll('a[href^="#panel-yazi-"]').forEach(function(link){
+          link.addEventListener('click',function(){var article=document.querySelector(link.getAttribute('href'));if(article)article.open=true;});
+        });
+        if(location.hash.indexOf('#panel-yazi-')===0){var selected=document.querySelector(location.hash);if(selected)selected.open=true;}
+      }).catch(function(error){console.warn(error);});
+    })();
+  </script>
   <script>
     document.querySelectorAll('a[href^="#yazi-"]').forEach(function(link){
       link.addEventListener('click',function(){
@@ -361,3 +400,4 @@
   </script>
 </body>
 </html>
+
