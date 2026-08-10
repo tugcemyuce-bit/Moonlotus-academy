@@ -78,6 +78,21 @@
     }
     .card h3{font-family:Georgia,serif;font-size:1.55rem;margin:8px 0 10px}
     .card p{color:var(--muted);margin:0}
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .blog-card{overflow:hidden;border:1px solid var(--line);border-radius:26px;background:rgba(255,255,255,.045)}
+    .blog-card img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center}
+    .blog-card-body{padding:24px}
+    .blog-card h3{font-family:Georgia,serif;font-size:1.55rem;line-height:1.18;margin:8px 0 12px}
+    .blog-card p{color:var(--muted);margin:0 0 18px}
+    .read-btn{display:inline-block;color:var(--gold);font-weight:700;cursor:pointer}
+    .blog-full{grid-column:1/-1;margin:10px 0 24px;border:1px solid var(--line);border-radius:26px;background:var(--panel)}
+    .blog-full summary{padding:20px 24px;cursor:pointer;color:var(--gold);font-weight:700;list-style:none}
+    .blog-full summary::-webkit-details-marker{display:none}
+    .article-body{padding:0 28px 30px;max-width:850px;margin:auto}
+    .article-body h3{font-family:Georgia,serif;font-size:clamp(1.8rem,4vw,3rem);line-height:1.15}
+    .article-body h4{font-family:Georgia,serif;color:var(--gold);font-size:1.25rem;margin-top:30px}
+    .article-body p{color:#e2dbe8}
+    .english{border-top:1px solid var(--line);margin-top:34px;padding-top:22px}
     .num{color:var(--gold);font-size:.85rem;letter-spacing:.12em}
     .story{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
     .quote{
@@ -100,7 +115,7 @@
     }
     @media(max-width:800px){
       .navlinks{display:none}
-      .grid,.story{grid-template-columns:1fr}
+      .grid,.story,.blog-grid{grid-template-columns:1fr}
       .contact{align-items:flex-start;flex-direction:column}
       .hero{min-height:72vh}
       .wrap{width:min(100% - 28px,1120px)}
@@ -115,6 +130,7 @@
         <div class="navlinks">
           <a href="#hakkimizda">Hakkımızda</a>
           <a href="#programlar">Programlar</a>
+          <a href="#blog">Blog</a>
           <a href="#iletisim">İletişim</a>
         </div>
       </nav>
@@ -135,6 +151,107 @@
         <div class="btns">
           <a class="btn primary" href="#programlar">Programları keşfet</a>
           <a class="btn" href="mailto:moonlotus.academy@gmail.com">Bize yaz</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Moon Lotus Blog</div>
+          <h2>Bedene, zihne ve kalbe dair.</h2>
+          <p>Yaşanmış deneyimlerden, yoga biliminden ve kadim öğretilerden beslenen Türkçe ve İngilizce yazılar.</p>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card">
+            <img src="assets/karanliktan-aydinliga.jpeg" alt="Ay ve güneş arasında lotus üzerinde oturan kadın" loading="lazy">
+            <div class="blog-card-body">
+              <div class="eyebrow">Kişisel Yolculuk · Personal Journey</div>
+              <h3>Karanlıktan Aydınlığa: Benim Hikâyem</h3>
+              <p>Bazen güç, hiç düşmemek değil; düştüğün yerden kendine şefkatle yeniden doğrulabilmektir.</p>
+              <a class="read-btn" href="#yazi-hikayem">Yazıyı oku · Read</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <img src="assets/yoga-noroplastisite.jpeg" alt="Lotus önünde meditasyon yapan ve beynindeki bağlantılar ışıldayan kadın" loading="lazy">
+            <div class="blog-card-body">
+              <div class="eyebrow">Yoga Bilimi · Yoga Science</div>
+              <h3>Yoga Beynimizi Gerçekten Değiştirebilir mi?</h3>
+              <p>Nefes, bilinçli hareket ve meditasyon beynin öğrenme ve uyum sağlama kapasitesini nasıl destekler?</p>
+              <a class="read-btn" href="#yazi-noroplastisite">Yazıyı oku · Read</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <img src="assets/kendini-bilmek.jpeg" alt="Hilal ve deniz manzarası önünde meditasyon yapan kadın" loading="lazy">
+            <div class="blog-card-body">
+              <div class="eyebrow">Yoga Felsefesi · Philosophy</div>
+              <h3>Kendini Bilmek: İçsel Yolculuğun İlk Kapısı</h3>
+              <p>Aradığımız cevapların bir kısmı dışarıda değil, sessizce kendimize döndüğümüzde belirir.</p>
+              <a class="read-btn" href="#yazi-kendini-bilmek">Yazıyı oku · Read</a>
+            </div>
+          </article>
+
+          <details class="blog-full" id="yazi-hikayem">
+            <summary>01 — Karanlıktan Aydınlığa: Benim Hikâyem</summary>
+            <div class="article-body">
+              <h3>Karanlıktan Aydınlığa: Benim Hikâyem</h3>
+              <p>Bu, her şeye rağmen hep güçlü kalan bir kadının hikâyesi değil. Çünkü ben de yoruldum, korktum, umutsuzluğa kapıldım. Bazen bedenimin içinde kendimi bir yabancı gibi hissettim; bazen yarına inanmak bile büyük bir çaba istedi.</p>
+              <p>MS, NMO ve lupusla yaşamak bana hayatın her zaman planladığımız gibi ilerlemediğini öğretti. Bedenim yavaşlamamı istediğinde zihnim devam etmek istiyordu. Bazı günler küçük bir hareket bile büyük bir zaferdi. Fakat zamanla gücün yalnızca direnmek olmadığını anladım. Yardım istemek, dinlenmek, ağlamak ve sonra yeniden nefes almak da gücün parçalarıydı.</p>
+              <p>Yoga benim için kusursuz pozlar yapmak olmadı. Bedenimin yapamadıklarına kızmak yerine, bugün yapabildiklerini duymayı öğrendiğim bir alan oldu. Nefesim bana hâlâ burada olduğumu hatırlattı. Her pratik, kendime geri dönmenin sessiz bir yolu hâline geldi.</p>
+              <p>Moon Lotus tam da bu yolculuktan doğdu. Lotus çamurun içinden yükselir; ay ise en karanlık gecede bile kendi döngüsünü sürdürür. Benim için bu isim, karanlığı inkâr etmeden ışığa doğru yönelmeyi anlatıyor.</p>
+              <p>Eğer sen de zor bir dönemden geçiyorsan, her an güçlü görünmek zorunda değilsin. Bugün yalnızca bir nefeslik yer açman bile yeterli olabilir. İyileşmek her zaman düz bir çizgi değildir; fakat kendimize şefkatle döndüğümüz her an yeni bir başlangıçtır.</p>
+              <div class="english">
+                <h4>From Darkness Into Light: My Story</h4>
+                <p>This is not the story of a woman who stayed strong through everything. I have been tired, afraid and hopeless too. Living with MS, NMO and lupus taught me that life does not always follow our plans—and that strength is not only about resisting. Resting, asking for help, crying and choosing to breathe again are forms of courage as well.</p>
+                <p>Yoga was never about perfect poses for me. It became a place where I learned to listen to what my body could do today instead of fighting what it could not. Moon Lotus grew from that journey: the lotus rises through mud, while the moon continues its cycle even through the darkest night.</p>
+                <p>If you are walking through a difficult season, you do not have to look strong every moment. Healing is rarely a straight line. Sometimes creating space for one conscious breath is already a new beginning.</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="blog-full" id="yazi-noroplastisite">
+            <summary>02 — Yoga Beynimizi Gerçekten Değiştirebilir mi?</summary>
+            <div class="article-body">
+              <h3>Yoga Beynimizi Gerçekten Değiştirebilir mi?</h3>
+              <p>Yoga yalnızca bedenimizi esneten fiziksel bir uygulama değildir. Nefes, bilinçli hareket, dikkat ve gevşeme aynı anda buluştuğunda beynimize tekrar eden yeni deneyimler sunar. Beynin deneyime göre bağlantılarını düzenleme kapasitesine nöroplastisite denir.</p>
+              <h4>Tekrar edilen deneyim neden önemlidir?</h4>
+              <p>Beyin sık kullandığımız yolları güçlendirmeye eğilimlidir. Bir duruş sırasında bedendeki duyumları fark etmek, nefesi sakinleştirmek ve dikkati yeniden ana getirmek; odaklanma ve öz düzenleme becerilerini tekrar tekrar çalıştırır. Değişim tek bir derste değil, düzenli ve sürdürülebilir pratikte gelişir.</p>
+              <h4>Nefes ve sinir sistemi</h4>
+              <p>Yavaş ve rahat nefes, bedene güvenli bir anda olduğuna dair sinyaller göndermeye yardımcı olabilir. Bu sırada kalp ritmi, kas gerginliği ve zihinsel uyanıklık da etkilenebilir. Amaç duyguları bastırmak değil, onlarla daha dengeli kalabilme kapasitesini geliştirmektir.</p>
+              <h4>Hareket, denge ve beden farkındalığı</h4>
+              <p>Yoga pozları denge, koordinasyon ve propriosepsiyon dediğimiz bedenin uzaydaki konumunu algılama becerisini çalıştırır. Uygulama kişinin ihtiyacına göre uyarlanmalıdır. Özellikle nörolojik ya da romatolojik bir rahatsızlığı bulunan kişiler, yeni bir programa başlamadan önce sağlık uzmanlarının önerisini almalı ve belirtilerini artıran hareketlerden kaçınmalıdır.</p>
+              <p>Yoga bir tedavinin yerine geçmez. Bununla birlikte uygun biçimde uygulandığında, beden–zihin bağını, stresi yönetme becerisini ve günlük yaşamda farkındalığı destekleyen tamamlayıcı bir pratik olabilir.</p>
+              <div class="english">
+                <h4>Can Yoga Really Change the Brain?</h4>
+                <p>Yoga is more than physical stretching. When breath, mindful movement, attention and relaxation meet, they offer the brain repeated experiences. Neuroplasticity is the brain’s capacity to reorganize its connections in response to experience.</p>
+                <p>During practice, noticing sensations, regulating the breath and returning attention to the present repeatedly exercise focus and self-regulation. Slow, comfortable breathing may also help signal safety to the nervous system, while yoga postures develop balance, coordination and body awareness.</p>
+                <p>Yoga does not replace medical treatment. Practices should be adapted to the individual, and anyone living with a neurological or rheumatological condition should consult their healthcare professional before beginning a new program.</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="blog-full" id="yazi-kendini-bilmek">
+            <summary>03 — Kendini Bilmek: İçsel Yolculuğun İlk Kapısı</summary>
+            <div class="article-body">
+              <h3>Kendini Bilmek: İçsel Yolculuğun İlk Kapısı</h3>
+              <p>İnsan bazen dünyayı anlamak için çok uzaklara bakar; kitaplara, öğretilere ve başka insanların cevaplarına yönelir. Oysa bütün bu yolların sonunda sessizce aynı kapıya geliriz: kendimize.</p>
+              <p>Kendini bilmek, yalnızca güçlü yanlarını tanımak değildir. Korkularını, alışkanlıklarını, ihtiyaçlarını ve gölgede bıraktığın taraflarını da yargılamadan görebilmektir. Bu bakış, “Ben buyum ve hiç değişmem” demek yerine, “Şu anda içimde ne oluyor?” diye sorar.</p>
+              <h4>Yoga bir ayna olabilir</h4>
+              <p>Minderin üzerinde sabırsızlığımızı, kıyaslama eğilimimizi ve kontrol etme isteğimizi fark ederiz. Bir poz istediğimiz gibi olmadığında verdiğimiz tepki, günlük hayattaki örüntülerimizi gösterebilir. Böylece pratik yalnızca bedende değil, davranışlarımızı görme biçimimizde de derinleşir.</p>
+              <h4>Bilgi kalbe indiğinde</h4>
+              <p>Okumak ve öğrenmek değerlidir; fakat bilgi ancak yaşamımıza değdiğinde dönüşüme dönüşür. Şefkat hakkında bilmekle kendimize şefkat göstermek, sabrı anlatmakla zorluk içinde sabırlı kalmak aynı şey değildir. İlimle beslenen kalbin karanlıkta kalmaması, bilginin sevgiyle yaşanmasıdır.</p>
+              <p>Kendini bilmek varılacak son bir nokta değil, ömür boyu süren bir yakınlaşmadır. Bugün birkaç dakika sessizce oturup nefesini dinlemekle başlayabilirsin: “Şu anda gerçekten neye ihtiyacım var?”</p>
+              <div class="english">
+                <h4>Knowing Yourself: The First Door of the Inner Journey</h4>
+                <p>We often look far away to understand life—toward books, teachings and other people’s answers. Yet these paths eventually bring us to the same quiet door: ourselves.</p>
+                <p>Self-knowledge is not only recognizing our strengths. It is meeting our fears, needs, habits and hidden parts without judgment. Yoga can become a mirror: our impatience, comparison and desire for control often appear on the mat just as they do in daily life.</p>
+                <p>Knowledge becomes transformative when it reaches the heart and enters the way we live. Knowing yourself is not a final destination but a lifelong relationship. You can begin with a few quiet breaths and one honest question: “What do I truly need right now?”</p>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -230,5 +347,17 @@
       © 2026 Moon Lotus Academy · Türkçe / English içerikler yakında.
     </div>
   </footer>
+  <script>
+    document.querySelectorAll('a[href^="#yazi-"]').forEach(function(link){
+      link.addEventListener('click',function(){
+        var article=document.querySelector(link.getAttribute('href'));
+        if(article){article.open=true;}
+      });
+    });
+    if(location.hash.indexOf('#yazi-')===0){
+      var selected=document.querySelector(location.hash);
+      if(selected){selected.open=true;}
+    }
+  </script>
 </body>
 </html>
